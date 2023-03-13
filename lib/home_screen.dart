@@ -31,9 +31,9 @@ class HomePage extends StatelessWidget {
                     final currentMovie = movies[index];
                     return Card(
                       color: Colors.orange,
-                      key: ValueKey(currentMovie.tittle),
+                      key: ValueKey(currentMovie.title),
                       child: ListTile(
-                        title: Text(currentMovie.tittle),
+                        title: Text(currentMovie.title),
                         subtitle:
                             Text(currentMovie.duration ?? 'no information'),
                         trailing: IconButton(

@@ -7,19 +7,22 @@ class MyFavMoviesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _myList = context.watch<MovieProvider>().myList;
+    final myList = context
+        .watch<MovieProvider>()
+        .myList;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Fav List ${_myList.length}'),
+        title: Text('My Fav List ${myList.length}'),
       ),
       body: ListView.builder(
-          itemCount: _myList.length,
+          itemCount: myList.length,
           itemBuilder: (_, index) {
-            final currentMovie = _myList[index];
+            final currentMovie = myList[index];
             return Card(
-              key: ValueKey(currentMovie.tittle),
+              key: ValueKey(currentMovie.title),
               child: ListTile(
-                title: Text(currentMovie.tittle),
+                title: Text(currentMovie.title),
                 subtitle: Text(currentMovie.duration ?? 'no inform'),
                 trailing: const Text(
                   'Remove',
